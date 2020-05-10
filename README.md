@@ -50,7 +50,7 @@ See image below for sample output from instructions gif above:
 ## CREDITS
 
 No collaborators in this version.
-Jest for running the provided tests, and inquirer for collecting input data from the user. Help with [existssync](https://www.geeksforgeeks.org/node-js-fs-existssync-method/) and [email inquirer validation](https://gist.github.com/Amitabh-K/ae073eea3d5207efaddffde19b1618e8).
+Jest for running the provided tests, and inquirer for collecting input data from the user. Help with [existssync](https://www.geeksforgeeks.org/node-js-fs-existssync-method/) and [email inquirer validation](https://gist.github.com/Amitabh-K/ae073eea3d5207efaddffde19b1618e8). [Gif Maker](https://ezgif.com/).
 
   
 ## LICENSE
