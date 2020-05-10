@@ -40,10 +40,6 @@ const employeeQuestions = [
         message: `What is the role of the employee?`,
         choices: ['Manager', 'Engineer', 'Intern']
     }
-// * getName()
-// * getId()
-// * getEmail()
-// * getRole() // Returns 'Employee'
 ​];
 
 // In addition to `Employee`'s properties and methods, `Manager` will also have:
@@ -55,7 +51,6 @@ const managerQuestions =
         name: 'officeNumber',
         message: `What is the manager's office number?`
     }
-//   * getRole() // Overridden to return 'Manager'
 ];
 
 // In addition to `Employee`'s properties and methods, `Engineer` will also have:
@@ -67,8 +62,6 @@ const engineerQuestions =
         name: 'github',
         message: `What is the engineer's GitHub username?`
     }
-//   * getGithub()
-//   * getRole() // Overridden to return 'Engineer'
 ];
 
 // In addition to `Employee`'s properties and methods, `Intern` will also have:
@@ -80,8 +73,6 @@ const internQuestions =
         name: 'school',
         message: `What is the intern's school?`
     }
-//   * getSchool()
-//   * getRole() // Overridden to return 'Intern'
 ];
 
 // After the user has input all employees desired, call the `render` function (required
