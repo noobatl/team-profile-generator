@@ -35,9 +35,17 @@ npm install
 
 ## USAGE
 
-See gif below for instruction on use.
+See gif below for instruction on testing:
 
+<img src="./Assets/TPG-Test.gif"/>
 
+See gif below for instruction on using app.js:
+
+<img src="./Assets/TPG-App.gif"/>
+
+See image below for sample output from instructions gif above:
+
+<img src="./Assets/TPG-Sample.jpg"/>
   
 ## CREDITS
 
