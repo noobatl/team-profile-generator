@@ -29,6 +29,17 @@ const employeeQuestions = [
     type: "input",
     name: "email",
     message: `What is the employee's email address?`,
+    default: () => {},
+    validate: function (email) {
+      valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+      if (valid) {
+        console.log(". Valid email format");
+        return true;
+      } else {
+        console.log(". Please enter a valid email");
+        return false;
+      }
+    },
   },
   //  * role
   {
@@ -69,6 +80,28 @@ const internQuestions = [
   },
 ];
 
+const addEmployeeQuestions = [
+    //  *additional employee to employeeArray
+    {
+        type: "confirm",
+        name: "addEmployee",
+        message: "Are there any more employees to add?",
+        default: false,
+    }
+]
+
+async function addEmployee() {
+    try {
+        const answer = await inquirer.prompt(addEmployeeQuestions);
+        if (answer.addEmployee) {
+            await askQuestions();
+        } return employeeArray;
+    } catch (error) {
+        console.log("Error: Add Employee");
+    }
+}
+
+
 async function askQuestions() {
   try {
     const employeeAnswers = await inquirer.prompt(employeeQuestions);
@@ -80,6 +113,7 @@ async function askQuestions() {
           const { officeNumber } = managerAnswers;
           let manager = new Manager(name, id, email, officeNumber);
           employeeArray.push(manager);
+          await addEmployee();
         } catch (err) {
           console.log("Error: Manager");
         }
@@ -90,6 +124,7 @@ async function askQuestions() {
           const { github } = engineerAnswers;
           let engineer = new Engineer(name, id, email, github);
           employeeArray.push(engineer);
+          await addEmployee();
         } catch (err) {
           console.log("Error: Engineer");
         }
@@ -100,6 +135,7 @@ async function askQuestions() {
           const { school } = internAnswers;
           let intern = new Intern(name, id, email, school);
           employeeArray.push(intern);
+          await addEmployee();
         } catch (err) {
           console.log("Error: Intern");
         }
@@ -110,7 +146,7 @@ async function askQuestions() {
   }
 }
 
-// After the user has input all employees desired, call the `render` function (required above) 
+// After the user has input all employees desired, call the `render` function (required above)
 // the `render` function will generate and return a block of HTML including templated divs for each employee!
 async function generator() {
   await askQuestions();
